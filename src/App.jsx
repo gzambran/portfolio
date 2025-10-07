@@ -15,16 +15,17 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: "PaceWise",
-      subtitle: "Running Calculator",
-      problem: "Runners constantly need to calculate split times - converting goal finish times to pace per mile, or translating mile pace into track splits for workouts.",
-      solution: "Built a running calculator that handles split conversions, age grading, and performance predictions across race distances.",
-      impact: "Available on the App Store with paying users.",
-      link: "https://pacewise.app",
-      linkText: "View Project",
-      tags: ["Swift"],
-      type: "mobile",
-      imageUrl: "/pacewise.png"
+      title: "CTICU Scheduler",
+      subtitle: "Medical Scheduling Platform",
+      problem: "ICU doctors managed schedules across multiple platforms with poor mobile UI. Weekend/night burden tracking was done by hand. Overtime billing required manual calculation.",
+      solution: "Built unified web and mobile apps with seamless syncing, automated tally tracking, and built-in overtime calculations.",
+      impact: "Replaced fragmented systems with one platform. Eliminated manual tracking and calculations.",
+      link: "https://apps.apple.com/us/app/cticu-schedule/id6747990617",
+      linkText: "View on App Store",
+      tags: ["React", "React Native", "Node.js", "PostgreSQL"],
+      type: "both",
+      imageUrl: "/cticu-mobile.png",
+      imageUrl2: "/cticu-desktop.png"
     },
     {
       title: "Little Branch Theater",
@@ -39,19 +40,6 @@ const Portfolio = () => {
       imageUrl: "/little-branch-theater.png"
     },
     {
-      title: "CTICU Scheduler",
-      subtitle: "Medical Scheduling Platform",
-      problem: "ICU doctors managed schedules across multiple platforms with poor mobile UI. Weekend/night burden tracking was done by hand. Overtime billing required manual calculation.",
-      solution: "Built unified web and mobile apps with seamless syncing, automated tally tracking, and built-in overtime calculations.",
-      impact: "Replaced fragmented systems with one platform. Eliminated manual tracking and calculations.",
-      link: "https://apps.apple.com/us/app/cticu-schedule/id6747990617",
-      linkText: "View on App Store",
-      tags: ["React", "React Native", "Node.js", "PostgreSQL"],
-      type: "both",
-      imageUrl: "/cticu-mobile.png",
-      imageUrl2: "/cticu-desktop.png"
-    },
-    {
       title: "HOA Management System",
       subtitle: "Financial Platform",
       problem: "HOA treasurer tracked everything in spreadsheets - monthly payments, expenses, and generating quarterly reports was tedious and error-prone.",
@@ -60,6 +48,18 @@ const Portfolio = () => {
       tags: ["React", "Node.js", "PostgreSQL"],
       type: "desktop",
       imageUrl: "/hoa.png"
+    },
+    {
+      title: "PaceWise",
+      subtitle: "Running Calculator",
+      problem: "Runners constantly need to calculate split times - converting goal finish times to pace per mile, or translating mile pace into track splits for workouts.",
+      solution: "Built a running calculator that handles split conversions, age grading, and performance predictions across race distances.",
+      impact: "Available on the App Store with paying users.",
+      link: "https://pacewise.app",
+      linkText: "View Project",
+      tags: ["Swift"],
+      type: "mobile",
+      imageUrl: "/pacewise.png"
     }
   ];
 
@@ -74,14 +74,20 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'}`}>
+      <nav className={`fixed w-full z-50 ${
+        isMenuOpen 
+          ? 'bg-purple-600' 
+          : scrolled 
+            ? 'bg-white/95 backdrop-blur-md shadow-sm' 
+            : 'bg-transparent'
+      }`}>
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
               <img 
                 src="/logo.webp" 
                 alt="GZ Logo" 
-                className="w-20 h-20 object-contain hover:scale-105 transition-transform"
+                className={`w-20 h-20 object-contain ${isMenuOpen ? 'opacity-0' : 'opacity-100 hover:scale-105 transition-transform'}`}
               />
             </button>
             
@@ -99,7 +105,7 @@ const Portfolio = () => {
 
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden p-2"
+              className={`md:hidden p-2 ${isMenuOpen ? 'text-white' : ''}`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X size={32} strokeWidth={2.5} /> : <Menu size={32} strokeWidth={2.5} />}
@@ -126,24 +132,26 @@ const Portfolio = () => {
       )}
 
       {/* Hero Section */}
-      <section className="min-h-[80vh] flex items-center justify-center px-6 pt-32">
+      <section className="min-h-[60vh] md:min-h-[80vh] flex items-center justify-center px-6 pt-32">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-16 items-center">
             {/* Text Side */}
-            <div>
+            <div className="order-1">
               <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">
                 Hey, I'm<br />
                 <span className="text-purple-600">Giancarlos</span>
               </h1>
-              <p className="text-2xl md:text-3xl text-gray-700 mb-8 leading-relaxed font-light">
+              <p className="text-2xl md:text-3xl text-gray-700 leading-relaxed font-light mb-6 md:mb-8">
                 I build software that solves real problems.
               </p>
-              <p className="text-xl text-gray-600 mb-10 leading-relaxed">
+              <p className="hidden md:block text-xl text-gray-600 mb-10 leading-relaxed">
                 Years in project management taught me how to listen to users and understand their pain. Now I actually build the solutions instead of just managing them.
               </p>
+              
+              {/* CTA Button - desktop only, under text */}
               <button 
                 onClick={() => scrollToSection('projects')}
-                className="group inline-flex items-center gap-3 bg-purple-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-purple-700 transition-all hover:gap-5"
+                className="hidden md:inline-flex group items-center gap-3 bg-purple-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-purple-700 transition-all hover:gap-5"
               >
                 See my work
                 <ArrowRight size={20} className="transition-all" />
@@ -151,24 +159,38 @@ const Portfolio = () => {
             </div>
 
             {/* Image Side */}
-            <div className="relative">
-              <div className="relative">
-                <img 
-                  src="/headshot.jpg" 
-                  alt="Giancarlos Zambrano"
-                  className="w-full rounded-3xl shadow-2xl"
-                />
+            <div className="relative order-2 flex flex-col items-center md:block">
+              <div className="relative w-full">
+                <button 
+                  onClick={() => window.open('/headshot.jpg', '_blank')}
+                  className="block w-full cursor-pointer"
+                >
+                  <img 
+                    src="/headshot.jpg" 
+                    alt="Giancarlos Zambrano"
+                    className="w-full rounded-3xl shadow-2xl hover:shadow-3xl transition-shadow"
+                  />
+                </button>
                 {/* Decorative element */}
                 <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-purple-200 rounded-full opacity-50 blur-3xl -z-10"></div>
                 <div className="absolute -top-6 -left-6 w-32 h-32 bg-purple-300 rounded-full opacity-30 blur-3xl -z-10"></div>
               </div>
+              
+              {/* CTA Button - mobile only, centered under image */}
+              <button 
+                onClick={() => scrollToSection('projects')}
+                className="md:hidden group inline-flex items-center gap-3 bg-purple-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-purple-700 transition-all hover:gap-5 mt-6"
+              >
+                See my work
+                <ArrowRight size={20} className="transition-all" />
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-32 px-6 bg-gray-50">
+      <section id="about" className="pt-16 pb-16 md:py-32 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-black mb-12 leading-tight">
             About
@@ -192,13 +214,13 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 md:py-32 px-6">
+      <section id="projects" className="pt-12 pb-16 md:py-32 px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-black mb-20">Work</h2>
+          <h2 className="text-5xl md:text-6xl font-black mb-12 md:mb-20">Work</h2>
 
           <div className="space-y-0">
             {projects.map((project, index) => (
-              <div key={index} className={`py-16 md:py-24 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
+              <div key={index} className={`py-12 md:py-24 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
                 <div className={`max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center px-6`}>
                   {/* Content Side */}
                   <div className={`${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'} order-1`}>
@@ -247,36 +269,56 @@ const Portfolio = () => {
                   <div className={`${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'} order-2`}>
                     {project.type === 'mobile' && (
                       <div className="relative mx-auto max-w-sm">
-                        <img 
-                          src={project.imageUrl} 
-                          alt={project.title}
-                          className="w-full rounded-3xl shadow-2xl border border-gray-200"
-                        />
+                        <button 
+                          onClick={() => window.open(project.imageUrl, '_blank')}
+                          className="block w-full cursor-pointer"
+                        >
+                          <img 
+                            src={project.imageUrl} 
+                            alt={project.title}
+                            className="w-full rounded-3xl shadow-2xl border border-gray-200 hover:shadow-3xl transition-shadow"
+                          />
+                        </button>
                       </div>
                     )}
                     
                     {project.type === 'desktop' && (
                       <div className="relative">
-                        <img 
-                          src={project.imageUrl} 
-                          alt={project.title}
-                          className="w-full rounded-2xl shadow-2xl border border-gray-200"
-                        />
+                        <button 
+                          onClick={() => window.open(project.imageUrl, '_blank')}
+                          className="block w-full cursor-pointer"
+                        >
+                          <img 
+                            src={project.imageUrl} 
+                            alt={project.title}
+                            className="w-full rounded-2xl shadow-2xl border border-gray-200 hover:shadow-3xl transition-shadow"
+                          />
+                        </button>
                       </div>
                     )}
 
                     {project.type === 'both' && (
                       <div className="flex gap-4 items-center">
-                        <img 
-                          src={project.imageUrl} 
-                          alt={`${project.title} mobile`}
-                          className="w-1/3 rounded-2xl shadow-xl border border-gray-200"
-                        />
-                        <img 
-                          src={project.imageUrl2} 
-                          alt={`${project.title} desktop`}
-                          className="w-2/3 rounded-2xl shadow-2xl border border-gray-200"
-                        />
+                        <button 
+                          onClick={() => window.open(project.imageUrl, '_blank')}
+                          className="w-1/3 cursor-pointer"
+                        >
+                          <img 
+                            src={project.imageUrl} 
+                            alt={`${project.title} mobile`}
+                            className="w-full rounded-2xl shadow-xl border border-gray-200 hover:shadow-2xl transition-shadow"
+                          />
+                        </button>
+                        <button 
+                          onClick={() => window.open(project.imageUrl2, '_blank')}
+                          className="w-2/3 cursor-pointer"
+                        >
+                          <img 
+                            src={project.imageUrl2} 
+                            alt={`${project.title} desktop`}
+                            className="w-full rounded-2xl shadow-2xl border border-gray-200 hover:shadow-3xl transition-shadow"
+                          />
+                        </button>
                       </div>
                     )}
                   </div>
@@ -311,7 +353,7 @@ const Portfolio = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-12 px-6">
+      <footer className="bg-gray-900 text-gray-400 py-8 md:py-12 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-lg font-semibold">© 2025 Giancarlos Zambrano</p>
         </div>
