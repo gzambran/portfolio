@@ -17,9 +17,7 @@ const Portfolio = () => {
     {
       title: "CTICU Scheduler",
       subtitle: "Medical Scheduling Platform",
-      problem: "ICU doctors managed schedules across multiple platforms with poor mobile UI. Weekend/night burden tracking was done by hand. Overtime billing required manual calculation.",
-      solution: "Built unified web and mobile apps with seamless syncing, automated tally tracking, and built-in overtime calculations.",
-      impact: "Replaced fragmented systems with one platform. Eliminated manual tracking and calculations.",
+      description: "Built a modern web + mobile scheduler for an ICU: create/update calendars with time-off visibility, automatic conflict flags, and fair-share tallies. Gives doctors one place to view schedules, request time off, and swap shifts.",
       link: "https://apps.apple.com/us/app/cticu-schedule/id6747990617",
       linkText: "View on App Store",
       tags: ["React", "React Native", "Node.js", "PostgreSQL"],
@@ -30,9 +28,7 @@ const Portfolio = () => {
     {
       title: "Little Branch Theater",
       subtitle: "Theater Company Website",
-      problem: "A new theater company needed an online presence to promote shows and tell their founding story.",
-      solution: "Built a full website showcasing their mission, upcoming productions, and company background.",
-      impact: "Live at littlebranchtheater.org",
+      description: "Designed and built a clean Next.js site for a new theater company to showcase their mission, productions, and team.",
       link: "https://www.littlebranchtheater.org",
       linkText: "Visit Site",
       tags: ["Next.js"],
@@ -42,9 +38,7 @@ const Portfolio = () => {
     {
       title: "HOA Management System",
       subtitle: "Financial Platform",
-      problem: "HOA treasurer tracked everything in spreadsheets - monthly payments, expenses, and generating quarterly reports was tedious and error-prone.",
-      solution: "Built a system that streamlines financial tracking, automates report generation, and handles email receipts/invoices to homeowners.",
-      impact: "Transformed hours of manual spreadsheet work into automated workflows.",
+      description: "Deployed a live web app for an HOA, working with the treasurer to automate payment tracking, quarterly reports, and emailed receipts/invoices.",
       tags: ["React", "Node.js", "PostgreSQL"],
       type: "desktop",
       imageUrl: "/hoa.png"
@@ -52,9 +46,7 @@ const Portfolio = () => {
     {
       title: "PaceWise",
       subtitle: "Running Calculator",
-      problem: "Runners constantly need to calculate split times - converting goal finish times to pace per mile, or translating mile pace into track splits for workouts.",
-      solution: "Built a running calculator that handles split conversions, age grading, and performance predictions across race distances.",
-      impact: "Available on the App Store with paying users.",
+      description: "Core pace/time calculator with interval generation, training zones, performance predictions, and age-grade scoring—built to help runners plan workouts fast.",
       link: "https://pacewise.app",
       linkText: "View Project",
       tags: ["Swift"],
@@ -142,10 +134,10 @@ const Portfolio = () => {
                 <span className="text-purple-600">Giancarlos</span>
               </h1>
               <p className="text-2xl md:text-3xl text-gray-700 leading-relaxed font-light mb-6 md:mb-8">
-                I build software that solves real problems.
+                I build software that actually solves problems.
               </p>
               <p className="hidden md:block text-xl text-gray-600 mb-10 leading-relaxed">
-                Years in project management taught me how to listen to users and understand their pain. Now I actually build the solutions instead of just managing them.
+                I've learned how to listen closely, understand what people really need, and build solutions they didn't know to ask for. Collaboration and iteration are core to how I build; it's how good ideas become great products.
               </p>
               
               {/* CTA Button - desktop only, under text */}
@@ -235,22 +227,9 @@ const Portfolio = () => {
                     <h3 className="text-4xl md:text-5xl font-black mb-3 leading-tight">{project.title}</h3>
                     <p className="text-xl text-purple-600 mb-8 font-bold">{project.subtitle}</p>
                     
-                    <div className="space-y-6 text-gray-700">
-                      <div>
-                        <h4 className="font-black text-sm mb-2 text-gray-900 uppercase tracking-wider">Problem</h4>
-                        <p className="text-lg leading-relaxed">{project.problem}</p>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-black text-sm mb-2 text-gray-900 uppercase tracking-wider">Solution</h4>
-                        <p className="text-lg leading-relaxed">{project.solution}</p>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-black text-sm mb-2 text-gray-900 uppercase tracking-wider">Impact</h4>
-                        <p className="text-lg leading-relaxed">{project.impact}</p>
-                      </div>
-                    </div>
+                    <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                      {project.description}
+                    </p>
 
                     {project.link && (
                       <a 
@@ -331,16 +310,15 @@ const Portfolio = () => {
 
       {/* Contact Section */}
       <section id="contact" className="py-32 px-6 bg-purple-600 text-white relative overflow-hidden">
-        {/* Decorative elements */}
         <div className="absolute top-10 right-10 w-64 h-64 bg-purple-400 rounded-full opacity-20 blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-80 h-80 bg-purple-800 rounded-full opacity-20 blur-3xl"></div>
         
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <h2 className="text-5xl md:text-7xl font-black mb-8 leading-tight">
-            Let's build<br />something together
+            Let’s build<br />something together
           </h2>
           <p className="text-2xl md:text-3xl text-purple-100 mb-12 font-light max-w-3xl mx-auto">
-            Got a problem that needs solving? Let's talk.
+            Have an idea or a problem that needs solving? I’d love to hear about it.
           </p>
           <a 
             href="mailto:Giancarlos.zambrano@gmail.com" 
