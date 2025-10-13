@@ -219,7 +219,10 @@ const Portfolio = () => {
       {/* Projects Section */}
       <section id="projects" className="pt-12 pb-16 md:py-32 px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-black mb-12 md:mb-20">Work</h2>
+          <h2 className="text-5xl md:text-6xl font-black mb-6 md:mb-8">Work</h2>
+          <p className="text-xl md:text-2xl text-gray-600 mb-12 md:mb-20 max-w-3xl">
+            A few things I've designed and built — simple tools that solve real problems.
+          </p>
 
           <div className="space-y-0">
             {projects.map((project, index) => (
