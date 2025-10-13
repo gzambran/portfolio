@@ -57,6 +57,8 @@ const Portfolio = () => {
       title: "GuardBar",
       subtitle: "macOS Menu Bar App",
       description: "Menu-bar controller for AdGuard Home (inspired by PiBar): quick toggle, status, and service controls—no browser needed.",
+      link: "https://github.com/gzambran/GuardBar",
+      linkText: "View on GitHub",
       tags: ["Swift", "SwiftUI"],
       type: "desktop",
       imageUrl: "/guardbar.png",
