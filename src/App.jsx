@@ -17,7 +17,7 @@ const Portfolio = () => {
     {
       title: "CTICU Scheduler",
       subtitle: "Medical Scheduling Platform",
-      description: "Built a modern web + mobile scheduler for an ICU: create/update calendars with time-off visibility, automatic conflict flags, and fair-share tallies. Gives doctors one place to view schedules, request time off, and swap shifts.",
+      description: "Built a modern web + mobile scheduler for an ICU: create/update calendars with time-off visibility, automatic conflict flags, and shift-quota tracking. Gives doctors one place to view schedules, request time off, and swap shifts.",
       link: "https://apps.apple.com/us/app/cticu-schedule/id6747990617",
       linkText: "View on App Store",
       tags: ["React", "React Native", "Node.js", "PostgreSQL"],
@@ -46,7 +46,7 @@ const Portfolio = () => {
     {
       title: "PaceWise",
       subtitle: "Running Calculator",
-      description: "Core pace/time calculator with interval generation, training zones, performance predictions, and age-grade scoring—built to help runners plan workouts fast.",
+      description: "Core pace/time calculator with interval generation, training zones, performance predictions, and age-grade scoring. Built to help runners plan workouts fast.",
       link: "https://pacewise.app",
       linkText: "View Project",
       tags: ["Swift"],
@@ -201,16 +201,13 @@ const Portfolio = () => {
           
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-gray-700 leading-relaxed mb-6">
-              I've spent 15 years in project management, but I started as a developer. The financial crisis pushed me into PM roles early in my career, and I stayed—got the certifications, managed the projects. But I was always most engaged when I could actually build things, not just manage them.
+              I build software that solves practical problems — products, tools, and systems that make everyday work smoother and more reliable.
             </p>
             <p className="text-xl text-gray-700 leading-relaxed mb-6">
-              A few years ago I started coding again and remembered why I got into this. Now I build solutions from start to finish—understanding the problem, gathering requirements, and shipping working software.
-            </p>
-            <p className="text-xl text-gray-700 leading-relaxed mb-6">
-              My PM background is an advantage: I know how to talk to users and figure out what actually needs to be built. Then I build it.
+              My focus is on clarity and usability: understanding how people actually work, then designing solutions that fit naturally into that flow.
             </p>
             <p className="text-xl text-gray-700 leading-relaxed">
-              Brooklyn-based. Competitive road and track runner. Chess player since I was a kid. I also spend time teaching people how to actually use AI tools.
+              Based in Brooklyn. Competitive runner, lifelong chess player, and always building something new.
             </p>
           </div>
         </div>
