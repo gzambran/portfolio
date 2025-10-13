@@ -52,6 +52,15 @@ const Portfolio = () => {
       tags: ["Swift"],
       type: "mobile",
       imageUrl: "/pacewise.png"
+    },
+    {
+      title: "GuardBar",
+      subtitle: "macOS Menu Bar App",
+      description: "Menu-bar controller for AdGuard Home (inspired by PiBar): quick toggle, status, and service controls—no browser needed.",
+      tags: ["Swift", "SwiftUI"],
+      type: "desktop",
+      imageUrl: "/guardbar.png",
+      comingSoon: true
     }
   ];
 
@@ -190,13 +199,16 @@ const Portfolio = () => {
           
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-gray-700 leading-relaxed mb-6">
-              I build software that solves practical problems — products, tools, and systems that make everyday work smoother and more reliable.
+              I've spent 15 years in project management, but I started as a developer. The financial crisis pushed me into PM roles early in my career, and I stayed—got the certifications, managed the projects. But I was always most engaged when I could actually build things, not just manage them.
             </p>
             <p className="text-xl text-gray-700 leading-relaxed mb-6">
-              My focus is on clarity and usability: understanding how people actually work, then designing solutions that fit naturally into that flow.
+              A few years ago I started coding again and remembered why I got into this. Now I build solutions from start to finish—understanding the problem, gathering requirements, and shipping working software.
+            </p>
+            <p className="text-xl text-gray-700 leading-relaxed mb-6">
+              My PM background is an advantage: I know how to talk to users and figure out what actually needs to be built. Then I build it.
             </p>
             <p className="text-xl text-gray-700 leading-relaxed">
-              Based in Brooklyn. Competitive runner, lifelong chess player, and always building something new.
+              Brooklyn-based. Competitive road and track runner. Chess player since I was a kid. I also spend time teaching people how to actually use AI tools.
             </p>
           </div>
         </div>
@@ -221,7 +233,12 @@ const Portfolio = () => {
                       ))}
                     </div>
                     
-                    <h3 className="text-4xl md:text-5xl font-black mb-3 leading-tight">{project.title}</h3>
+                    <h3 className="text-4xl md:text-5xl font-black mb-3 leading-tight">
+                      {project.title}
+                      {project.comingSoon && (
+                        <span className="ml-4 text-2xl md:text-3xl text-purple-600 font-bold">Coming Soon</span>
+                      )}
+                    </h3>
                     <p className="text-xl text-purple-600 mb-8 font-bold">{project.subtitle}</p>
                     
                     <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
