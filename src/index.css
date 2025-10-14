@@ -1,3 +1,47 @@
+/* Mona Sans font from CDN */
+@import url('https://fonts.cdnfonts.com/css/mona-sans');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Mona Sans', sans-serif;
+    font-size: 1.125rem; /* 18px base instead of 16px */
+  }
+  
+  h1 {
+    font-size: 4rem; /* 64px on mobile */
+  }
+  
+  h2 {
+    font-size: 3.5rem; /* 56px */
+  }
+  
+  h3 {
+    font-size: 2.75rem; /* 44px */
+  }
+  
+  p {
+    font-size: 1.375rem; /* 22px */
+  }
+  
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 5.5rem; /* 88px on desktop */
+    }
+    
+    h2 {
+      font-size: 4.5rem; /* 72px */
+    }
+    
+    h3 {
+      font-size: 3.5rem; /* 56px */
+    }
+    
+    p {
+      font-size: 1.5rem; /* 24px */
+    }
+  }
+}
