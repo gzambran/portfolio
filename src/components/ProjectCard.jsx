@@ -10,24 +10,11 @@ const ProjectCard = ({ project, index }) => {
       <div className={`max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center px-6`}>
         {/* Content Side */}
         <div className={`${isEven ? 'lg:order-1' : 'lg:order-2'} order-1`}>
-          <div className="flex flex-wrap gap-2 mb-6">
-            {project.tags.map((tag, i) => (
-              <span key={i} className="px-4 py-2 bg-black text-white rounded-full text-xs font-semibold uppercase tracking-wider">
-                {tag}
-              </span>
-            ))}
-          </div>
-          
-          <h3 className="font-bold mb-3 leading-tight text-black">
-            {project.comingSoon && (
-              <span className="block text-sm font-semibold uppercase tracking-wider text-gray-500 mb-2">
-                Coming Soon
-              </span>
-            )}
+          <h3 className="text-4xl md:text-5xl font-bold mb-4 leading-tight text-black">
             {project.title}
           </h3>
 
-          <p className="text-gray-700 mb-8 font-medium">{project.subtitle}</p>
+          <p className="text-xl text-gray-600 mb-8 font-medium">{project.subtitle}</p>
           
           <p className="text-gray-700 leading-relaxed font-normal">
             {project.description}
