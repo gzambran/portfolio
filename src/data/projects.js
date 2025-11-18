@@ -2,7 +2,7 @@ export const projects = [
   {
     title: "CTICU Scheduler",
     subtitle: "Medical Scheduling Platform",
-    description: "Built a web + mobile scheduling app for an Intensive Care Unit: create quarterly schedules with time-off visibility and per-doctor shift quotas. Doctors use the mobile app to view schedules, request time off/swaps, and sign up for swing shifts.",
+    description: "ICU directors were spending 20+ hours per quarter building schedules in Excel, manually tracking time-off requests, and fielding constant swap requests via text. Built a full scheduling platform (web + mobile) that automates quarterly schedule creation, manages time-off with real-time visibility, enforces shift quotas per doctor, and lets the team handle swaps and shift sign-ups themselves. Now deployed and used daily by an entire ICU team.",
     link: "https://apps.apple.com/us/app/cticu-schedule/id6747990617",
     linkText: "View on App Store",
     tags: ["React", "React Native", "Node.js", "PostgreSQL"],
@@ -13,7 +13,7 @@ export const projects = [
   {
     title: "PoliGrade",
     subtitle: "Political Accountability Platform",
-    description: "Served as tech lead building a full-stack platform that helps voters make informed decisions through data-driven evaluations of 500+ politicians and a policy alignment quiz.",
+    description: "Voters struggle to find unbiased information about politicians beyond partisan talking points. Led the technical build of a civic tech platform that evaluates 500+ politicians using objective criteria and helps users find representatives aligned with their actual policy positions through a detailed quiz. The goal: make it easier to hold politicians accountable and vote based on substance, not sound bites.",
     link: "https://poligrade.com",
     linkText: "Visit Site",
     tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
@@ -23,7 +23,7 @@ export const projects = [
   {
     title: "Little Branch Theater",
     subtitle: "Theater Company Website",
-    description: "Built a Next.js site for a new theater company to establish their brand and promote their mission, productions, and team.",
+    description: "A new theater company needed to establish legitimacy and attract audiences before their first production. Built a clean, professional site that showcases their mission, upcoming productions, and team—giving them the web presence needed to book venues and sell tickets.",
     link: "https://www.littlebranchtheater.org",
     linkText: "Visit Site",
     tags: ["Next.js"],
@@ -33,7 +33,7 @@ export const projects = [
   {
     title: "HOA Financial Platform",
     subtitle: "Payment & Reporting System",
-    description: "Built a financial management web app for HOAs to track payments, send automated invoices/receipts via email, and generate quarterly reports. Currently deployed for one HOA and marketing to others.",
+    description: "HOA treasurers were managing finances across spreadsheets, manually sending invoices, and spending hours on quarterly reports. Built a financial platform that tracks all payments, automatically sends invoices and receipts via email, and generates comprehensive reports in minutes. Currently deployed for one HOA with several others in the pipeline.",
     tags: ["React", "Node.js", "PostgreSQL"],
     type: "desktop",
     imageUrl: "/hoa.png"
@@ -41,7 +41,7 @@ export const projects = [
   {
     title: "PaceWise",
     subtitle: "Running Calculator",
-    description: "Core pace/time calculator with interval generation, training zones, performance predictions, and age-grade scoring. Built to help runners plan workouts fast.",
+    description: "As a competitive runner, I was constantly doing mental math to calculate paces, convert times, and plan interval workouts. Built a native iOS calculator that handles pace/time conversions, generates interval workouts, calculates training zones, predicts race performances, and provides age-grade scoring—everything you need to plan training, in one fast app.",
     link: "https://apps.apple.com/app/id6743449540",
     linkText: "View on App Store",
     tags: ["Swift"],
@@ -51,12 +51,11 @@ export const projects = [
   {
     title: "GuardBar",
     subtitle: "macOS Menu Bar App",
-    description: "Menu-bar controller for AdGuard Home (inspired by PiBar): quick toggle, status, and service controls—no browser needed.",
+    description: "Managing AdGuard Home required opening a browser, logging in, and navigating through a web UI just to toggle it on or off. Built a native macOS menu bar app that puts controls directly in your menu bar—toggle protection, check status, and manage your AdGuard Home instance without ever opening a browser.",
     link: "https://github.com/gzambran/GuardBar",
     linkText: "View on GitHub",
     tags: ["Swift", "SwiftUI"],
     type: "desktop",
-    imageUrl: "/guardbar.png",
-    comingSoon: true
+    imageUrl: "/guardbar.png"
   }
 ];

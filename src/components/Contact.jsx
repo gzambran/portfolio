@@ -15,7 +15,7 @@ const Contact = () => {
           Let's build<br />something together
         </h2>
         <p className="text-gray-700 mb-12 font-normal max-w-3xl mx-auto">
-          Have an idea or a problem that needs solving? I'd love to hear about it.
+          Working on something that needs to get built? Have a broken process that's begging for automation? Let's talk.
         </p>
         <a 
           href="mailto:Giancarlos.zambrano@gmail.com" 

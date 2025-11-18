@@ -15,13 +15,13 @@ const About = () => {
         
         <div className="prose prose-lg max-w-none">
           <p className="text-gray-900 leading-relaxed mb-6 font-normal">
-            I build software that solves practical problems — products, tools, and systems that make everyday work smoother and more reliable.
+            I've always been drawn to inefficiencies—the manual processes, the spreadsheets held together with prayers, the tools that should exist but don't. My brain is wired to see these friction points and immediately start thinking about solutions.
           </p>
           <p className="text-gray-900 leading-relaxed mb-6 font-normal">
-            My focus is on clarity and usability: understanding how people actually work, then designing solutions that fit naturally into that flow.
+            After years working in tech, I've learned that the hardest part isn't the building—it's understanding the actual problem. I spend time talking to users, watching workflows, finding the real pain points. Then I build fast, test with real people, and iterate based on what actually works.
           </p>
           <p className="text-gray-900 leading-relaxed font-normal">
-            Based in Brooklyn. Competitive runner, lifelong chess player, and always building something new.
+            Based in Brooklyn. When I'm not building, I'm running competitively or playing chess—both teach you to think several moves ahead and adjust your strategy based on what's actually happening, not what you hoped would happen.
           </p>
         </div>
       </div>

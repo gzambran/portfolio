@@ -12,10 +12,10 @@ const Hero = ({ scrollToSection }) => {
               Giancarlos
             </h1>
             <p className="text-gray-700 leading-relaxed font-normal mb-6 md:mb-8">
-              I build software that actually solves problems.
+              I build products that solve real operational problems—from medical scheduling systems used by ICU doctors to civic tech platforms tracking 500+ politicians.
             </p>
             <p className="hidden md:block text-gray-600 mb-10 leading-relaxed font-normal">
-              I've learned how to listen closely, understand what people really need, and build solutions they didn't know to ask for. Collaboration and iteration are core to how I build; it's how good ideas become great products.
+              I focus on understanding the actual problem, iterating quickly, and shipping solutions that people use every day. If there's a process that's broken or inefficient, I want to build the tool that fixes it.
             </p>
             
             {/* CTA Button - desktop only, under text */}
@@ -31,16 +31,11 @@ const Hero = ({ scrollToSection }) => {
           {/* Image Side */}
           <div className="relative order-2 flex flex-col items-center md:block">
             <div className="relative w-full">
-              <button 
-                onClick={() => window.open('/headshot.jpg', '_blank')}
-                className="block w-full cursor-pointer"
-              >
-                <img 
-                  src="/headshot.jpg" 
-                  alt="Giancarlos Zambrano"
-                  className="w-full rounded-3xl shadow-lg hover:shadow-xl transition-shadow"
-                />
-              </button>
+              <img
+                src="/headshot.jpg"
+                alt="Giancarlos Zambrano"
+                className="w-full rounded-3xl shadow-lg"
+              />
             </div>
             
             {/* CTA Button - mobile only, centered under image */}

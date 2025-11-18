@@ -50,56 +50,40 @@ const ProjectCard = ({ project, index }) => {
         <div className={`${isEven ? 'lg:order-2' : 'lg:order-1'} order-2`}>
           {project.type === 'mobile' && (
             <div className="relative mx-auto max-w-sm">
-              <button 
-                onClick={() => window.open(project.imageUrl, '_blank')}
-                className="block w-full cursor-pointer"
-              >
-                <img 
-                  src={project.imageUrl} 
-                  alt={project.title}
-                  className="w-full rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow"
-                />
-              </button>
+              <img
+                src={project.imageUrl}
+                alt={project.title}
+                className="w-full rounded-2xl shadow-lg border border-gray-200"
+              />
             </div>
           )}
-          
+
           {project.type === 'desktop' && (
             <div className="relative">
-              <button 
-                onClick={() => window.open(project.imageUrl, '_blank')}
-                className="block w-full cursor-pointer"
-              >
-                <img 
-                  src={project.imageUrl} 
-                  alt={project.title}
-                  className="w-full rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow"
-                />
-              </button>
+              <img
+                src={project.imageUrl}
+                alt={project.title}
+                className="w-full rounded-2xl shadow-lg border border-gray-200"
+              />
             </div>
           )}
 
           {project.type === 'both' && (
             <div className="flex gap-4 items-center">
-              <button 
-                onClick={() => window.open(project.imageUrl, '_blank')}
-                className="w-1/3 cursor-pointer"
-              >
-                <img 
-                  src={project.imageUrl} 
+              <div className="w-1/3">
+                <img
+                  src={project.imageUrl}
                   alt={`${project.title} mobile`}
-                  className="w-full rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow"
+                  className="w-full rounded-2xl shadow-lg border border-gray-200"
                 />
-              </button>
-              <button 
-                onClick={() => window.open(project.imageUrl2, '_blank')}
-                className="w-2/3 cursor-pointer"
-              >
-                <img 
-                  src={project.imageUrl2} 
+              </div>
+              <div className="w-2/3">
+                <img
+                  src={project.imageUrl2}
                   alt={`${project.title} desktop`}
-                  className="w-full rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow"
+                  className="w-full rounded-2xl shadow-lg border border-gray-200"
                 />
-              </button>
+              </div>
             </div>
           )}
         </div>
