@@ -6,7 +6,7 @@ const Hero = ({ scrollToSection }) => {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-6 md:gap-16 items-center">
           {/* Text Side */}
-          <div className="order-1">
+          <div className="order-1 animate-fade-in">
             <h1 className="font-bold leading-tight mb-6 text-black">
               Hey, I'm<br />
               Giancarlos
@@ -19,12 +19,12 @@ const Hero = ({ scrollToSection }) => {
             </p>
             
             {/* CTA Button - desktop only, under text */}
-            <button 
+            <button
               onClick={() => scrollToSection('projects')}
-              className="hidden md:inline-flex group items-center gap-3 bg-black text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-800 transition-all hover:gap-5"
+              className="hidden md:inline-flex group items-center gap-3 bg-black text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-800 transition-all focus:outline-none focus:ring-2 focus:ring-pink-accent focus:ring-offset-2"
             >
               See my work
-              <ArrowRight size={20} className="transition-all" />
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
@@ -39,12 +39,12 @@ const Hero = ({ scrollToSection }) => {
             </div>
             
             {/* CTA Button - mobile only, centered under image */}
-            <button 
+            <button
               onClick={() => scrollToSection('projects')}
-              className="md:hidden group inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-800 transition-all hover:gap-5 mt-6"
+              className="md:hidden group inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-800 transition-all mt-6 focus:outline-none focus:ring-2 focus:ring-pink-accent focus:ring-offset-2"
             >
               See my work
-              <ArrowRight size={20} className="transition-all" />
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>

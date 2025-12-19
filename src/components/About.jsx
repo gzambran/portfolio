@@ -1,14 +1,36 @@
+import { useEffect, useRef } from 'react';
+
 const About = () => {
-  const bgImageStyle = {
-    backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.6)), url(/background.webp)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundAttachment: 'fixed'
-  };
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = sectionRef.current?.querySelectorAll('.animate-on-scroll');
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section id="about" className="pt-12 pb-16 md:py-32 px-6 bg-soft-pink" style={bgImageStyle}>
-      <div className="max-w-4xl mx-auto">
+    <section
+      id="about"
+      ref={sectionRef}
+      className="pt-12 pb-16 md:py-32 px-6 bg-soft-pink bg-cover bg-center"
+      style={{
+        backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.6)), url(/background.webp)'
+      }}
+    >
+      <div className="max-w-4xl mx-auto animate-on-scroll">
         <h2 className="font-bold mb-12 leading-tight text-black">
           About
         </h2>

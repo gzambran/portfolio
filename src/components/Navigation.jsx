@@ -37,42 +37,42 @@ const Navigation = ({ scrollToSection }) => {
 
   return (
     <>
-      <nav className={`fixed w-full z-50 transition-all ${
-        mobileMenuOpen 
-          ? '' 
-          : scrolled 
-            ? 'bg-white/95 backdrop-blur-md shadow-sm' 
+      <nav className={`fixed top-0 left-0 right-0 md:top-4 md:left-4 md:right-4 z-50 transition-all ${
+        mobileMenuOpen
+          ? ''
+          : scrolled
+            ? 'bg-white/95 backdrop-blur-md shadow-sm md:rounded-2xl'
             : ''
       }`}>
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="max-w-7xl mx-auto px-6 py-4 md:px-8">
           <div className="flex justify-between items-center">
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className={`transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
             >
-              <img 
-                src="/logo.webp" 
-                alt="GZ Logo" 
-                className="w-20 h-20 object-contain hover:scale-105 transition-transform"
+              <img
+                src="/logo.webp"
+                alt="GZ Logo"
+                className="w-20 h-20 object-contain hover:opacity-80 transition-opacity"
               />
             </button>
             
             <div className="hidden md:flex items-center gap-12">
-              <button 
-                onClick={() => scrollToSection('about')} 
-                className="text-lg font-semibold text-black hover:text-pink-accent transition-colors"
+              <button
+                onClick={() => scrollToSection('about')}
+                className="text-lg font-semibold text-black hover:text-pink-accent transition-colors focus:outline-none focus:ring-2 focus:ring-pink-accent focus:ring-offset-2 rounded-lg px-2 py-1"
               >
                 About
               </button>
-              <button 
-                onClick={() => scrollToSection('projects')} 
-                className="text-lg font-semibold text-black hover:text-pink-accent transition-colors"
+              <button
+                onClick={() => scrollToSection('projects')}
+                className="text-lg font-semibold text-black hover:text-pink-accent transition-colors focus:outline-none focus:ring-2 focus:ring-pink-accent focus:ring-offset-2 rounded-lg px-2 py-1"
               >
                 Work
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection('contact')}
-                className="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-all"
+                className="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-all focus:outline-none focus:ring-2 focus:ring-pink-accent focus:ring-offset-2"
               >
                 Contact
               </button>
@@ -102,19 +102,19 @@ const Navigation = ({ scrollToSection }) => {
         <div className="flex flex-col items-center justify-center h-full gap-10 px-6">
           <button
             onClick={() => handleNavClick('about')}
-            className="text-white text-3xl font-semibold hover:text-pink-accent transition-all transform hover:scale-110"
+            className="text-white text-3xl font-semibold hover:text-pink-accent transition-colors"
           >
             About
           </button>
           <button
             onClick={() => handleNavClick('projects')}
-            className="text-white text-3xl font-semibold hover:text-pink-accent transition-all transform hover:scale-110"
+            className="text-white text-3xl font-semibold hover:text-pink-accent transition-colors"
           >
             Work
           </button>
           <button
             onClick={() => handleNavClick('contact')}
-            className="bg-pink-accent text-black px-12 py-5 rounded-full text-2xl font-semibold hover:bg-white transition-all transform hover:scale-105 shadow-lg"
+            className="bg-pink-accent text-black px-12 py-5 rounded-full text-2xl font-semibold hover:bg-white transition-colors shadow-lg"
           >
             Contact
           </button>

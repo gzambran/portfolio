@@ -6,7 +6,9 @@ const ProjectCard = ({ project, index }) => {
   const bgClass = isEven ? 'bg-gray-50' : 'bg-soft-pink';
 
   return (
-    <div className={`py-12 md:py-24 ${bgClass} rounded-3xl mx-6 mb-6`}>
+    <div className={`py-12 md:py-24 ${bgClass} rounded-3xl mx-6 mb-6 transition-shadow duration-300 hover:shadow-xl animate-on-scroll`}
+      style={{ animationDelay: `${index * 100}ms` }}
+    >
       <div className={`max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center px-6`}>
         {/* Content Side */}
         <div className={`${isEven ? 'lg:order-1' : 'lg:order-2'} order-1`}>
@@ -21,14 +23,14 @@ const ProjectCard = ({ project, index }) => {
           </p>
 
           {project.link && (
-            <a 
+            <a
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 mt-8 text-black text-lg font-semibold hover:text-gray-700 transition-all hover:gap-4"
+              className="group inline-flex items-center gap-2 mt-8 text-black text-lg font-semibold hover:text-gray-700 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-pink-accent focus:ring-offset-2 rounded-lg"
             >
               {project.linkText}
-              <ArrowRight size={20} className="transition-all" />
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </a>
           )}
         </div>
